@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Frame from "@/components/Frame";
 import SmoothScroll from "@/components/SmoothScroll";
 import HeroSection from "@/components/HeroSection";
 import CenterSection from "@/components/CenterSection";
@@ -12,6 +11,7 @@ import CenterTallSection from "@/components/CenterTallSection";
 import GridSection from "@/components/GridSection";
 import OutroSection from "@/components/OutroSection";
 import ScrollAnimations from "@/components/ScrollAnimations";
+import ScrollDownButton from "@/components/ScrollDownButton";
 import { preloadImages } from "@/lib/utils";
 
 export default function Home() {
@@ -30,8 +30,8 @@ export default function Home() {
   return (
     <>
       <SmoothScroll />
+      <ScrollDownButton />
       <main>
-        <Frame />
         <HeroSection />
         <CenterSection />
         <ColumnSection />
@@ -40,12 +40,6 @@ export default function Home() {
         <CenterTallSection />
         <GridSection />
         <OutroSection />
-        <p className="credits font-alt">
-          <a href="https://tympanus.net/codrops/demos">Browse all demos</a>
-        </p>
-        <p className="credits font-alt">
-          Made by <a href="https://x.com/codrops">@codrops</a>
-        </p>
       </main>
       <ScrollAnimations />
     </>

@@ -1,15 +1,38 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Products" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
+];
+
 export default function Frame() {
+  const pathname = usePathname();
+
   return (
     <div className="frame font-cap">
-      <h3 className="frame__title">One Element Scroll</h3>
+      <h3 className="frame__title">
+        <Link href="/">Seraph Kamos</Link>
+      </h3>
       <div className="frame-wrap">
-        <a href="https://tympanus.net/codrops/?p=82884">Article</a>
-        <a href="https://tympanus.net/codrops/demos">All demos</a>
-        <a href="https://github.com/codrops/OneElementScroll">GitHub</a>
-        <nav className="tags">
-          <a href="https://tympanus.net/codrops/demos/?tag=scroll">#scroll</a>
-          <a href="https://tympanus.net/codrops/demos/?tag=layout">#layout</a>
-        </nav>
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={
+              pathname === link.href
+                ? "text-white no-underline"
+                : "text-[var(--color-link)] no-underline hover:text-[var(--color-link-hover)]"
+            }
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </div>
   );

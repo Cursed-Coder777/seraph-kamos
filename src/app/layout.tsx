@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Frame from "@/components/Frame";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "One Element Scroll | Codrops",
+  title: "Seraph Kamos — One Element Scroll",
   description:
     "A simple concept of animating one element across different waypoints on scroll using GSAP Flip and ScrollTrigger.",
   keywords: ["scroll animation"],
@@ -18,7 +20,11 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/klj1rev.css" />
       </head>
-      <body className="loading">{children}</body>
+      <body className="loading">
+        <Frame />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
