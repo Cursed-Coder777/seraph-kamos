@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/klj1rev.css" />
       </head>
-      <body className="loading">
+      <body className="loading" suppressHydrationWarning>
         <Frame />
         {children}
         <Footer />
