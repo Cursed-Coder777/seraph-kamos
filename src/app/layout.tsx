@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   description:
     "A simple concept of animating one element across different waypoints on scroll using GSAP Flip and ScrollTrigger.",
   keywords: ["scroll animation"],
+  icons: [{ rel: "icon", url: "/sephra-kamos.jpg" }],
 };
 
 export default function RootLayout({
